@@ -1,0 +1,29 @@
+VIDEO DEMO (for the course at KTH):
+https://vimeo.com/109146491
+
+Android FX Controller enables you to control midi parameters with body movements. In this patch it's calibrated for a specific Axe FX II patch. Turning right, left, or towards the audience switches between different scenes in the patch. Angling the guitar upwards enables multitap delay. Touching and moving the screen pointer the screen enables and edits the drive mix and filter cutoff. 
+
+
+Setup guide:
+
+1. Download AndOSC, install on your android device
+2. Install PD-extended http://puredata.info/downloads/pd-extended
+3. Connect Axe FX II with usb cable, send the AndroidFXController.syx to your AxeFXII
+
+4. Start andOSC --> settings --> IP/Port, check ifconfig in terminal and set your ip*, set port to 8000
+5. Start the PD patch, PDToAxeFx.pd, and make sure your phone sends data to the patch.
+6. In PD set MIDI settings Output device to AXE-FX II MIDI Out, In audio settings use the built in soundcard (of the computer)
+7. Attach the phone to the guitar. I prefer non permanent adhesive, something similar to blu-tack, so the finish doesn't get damaged.
+8. Check out the video and try it out! For errors contact: matslexell88@gmail.com
+
+
+
+*Im not 100% sure what ip you should set, try different things out and see what works. It should look something like this: 192.168.1.3, but probably NOT like this: 127.0.0.1. Sometimes whatsmyip.org is the one you should use.
+
+
+IN PD: Press "reset" to set your current direction to point towards the audience. 
+Feel free to try and connect the objects to send different MIDI signals. Also try out the 'pd tap' object, that counts the your taps on the screen :)
+
+IN AXE FX: Make sure in I/O -> Ctrl that your MIDI parameters are set to the corresponding values with the pd patch, otherwise change the pd patch to send the correct MIDI signals for your Axe FX II MIDI setup.
+
+IMPORTANT: I've noticed that this is a rather heavy patch, but it works fine on FW 14.02, if the CPU usage is too much check that you have NOT set the Input and Output device in PD audi settings to AXE FX II, set it to the computer audio device. 
