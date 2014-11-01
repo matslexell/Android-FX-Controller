@@ -27,3 +27,5 @@ Feel free to try and connect the objects to send different MIDI signals. Also tr
 IN AXE FX: Make sure in I/O -> Ctrl that your MIDI parameters are set to the corresponding values with the pd patch, otherwise change the pd patch to send the correct MIDI signals for your Axe FX II MIDI setup.
 
 IMPORTANT: I've noticed that this is a rather heavy patch, but it works fine on FW 14.02, if the CPU usage is too much check that you have NOT set the Input and Output device in PD audi settings to AXE FX II, set it to the computer audio device. 
+
+test
